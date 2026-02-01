@@ -1,5 +1,5 @@
 context:
-  version: "0.6.0"
+  version: "0.7.0"
   python_min: 3.12
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   - url: https://pypi.org/packages/source/r/rovr/rovr-${{ version }}.tar.gz
-    sha256: fac73cc8bdb500f21efc01ed8cb52896ca7e5d48a38be3ab54a9c896bb9759c9
+    sha256: eba71b6b722a808f6b7d7dbef8e74d07114e4305327d8425c97bacb545b17325
 
 build:
   number: 0
