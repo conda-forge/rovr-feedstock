@@ -7,7 +7,7 @@ Home: https://github.com/NSPC911/rovr
 
 Package license: MIT
 
-Summary: A post-modern terminal file explorer
+Summary: A post-modern terminal file explorer.
 
 Documentation: https://nspc911.github.io/rovr
 
