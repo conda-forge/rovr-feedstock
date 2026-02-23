@@ -1,5 +1,5 @@
 context:
-  version: "0.6.0"
+  version: "0.7.0"
   python_min: 3.12
 
 package:
@@ -8,14 +8,14 @@ package:
 
 source:
   - url: https://pypi.org/packages/source/r/rovr/rovr-${{ version }}.tar.gz
-    sha256: fac73cc8bdb500f21efc01ed8cb52896ca7e5d48a38be3ab54a9c896bb9759c9
+    sha256: eba71b6b722a808f6b7d7dbef8e74d07114e4305327d8425c97bacb545b17325
 
 build:
   number: 0
   script: ${{ PYTHON }} -m pip install .
   python:
     entry_points:
-      - rovr = rovr.__main__:main
+      - rovr = rovr:main
   noarch: python
 
 requirements:
@@ -25,24 +25,26 @@ requirements:
     - pip
   run:
     - python >=${{ python_min }}
-    # - backports.zstd >=1.2.0 for 0.7.0
+    - backports.zstd >=1.2.0
+    - python-fastjsonschema >=2.21.2
     - humanize >=4.14.0
-    - jsonschema >=4.25.0
     - natsort >=8.4.0
     - pathvalidate >=3.3.1
     - pdf2image >=1.17.0
     - pillow >=12.0.0
     - platformdirs >=4.5.0
     - psutil >=7.1.0
-    # - puremagic ==1.30 for 0.7.0
+    - puremagic ==1.30
     - rarfile >=4.2
+    - rich >=14.3.1
     - rich-click >=1.9.3
     - send2trash >=1.8.3
-    - textual ~=6.6.0
+    - textual ~=7.0
     - textual-autocomplete >=4.0.6
     - textual-image >=0.8.4
+    - textual-speedups >=0.2.1
     - tomli >=2.3.0
-    - ujson >=5.10.0
+    - ujson >=5.11.0
 
 tests:
   - python:
@@ -50,12 +52,14 @@ tests:
         - rovr
       pip_check: true
       python_version: ${{ python_min }}.*
+  - script:
+    - rovr --help
 
 about:
-  summary: A post-modern terminal file explorer
+  summary: A post-modern terminal file explorer.
   homepage: https://github.com/NSPC911/rovr
   license: MIT
-  license_file: LICENSE.txt
+  license_file: LICENSE
   documentation: https://nspc911.github.io/rovr
 
 extra:
