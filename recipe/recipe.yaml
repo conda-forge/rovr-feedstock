@@ -1,5 +1,5 @@
 context:
-  version: "0.7.0"
+  version: "0.8.1"
   python_min: 3.12
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   - url: https://pypi.org/packages/source/r/rovr/rovr-${{ version }}.tar.gz
-    sha256: eba71b6b722a808f6b7d7dbef8e74d07114e4305327d8425c97bacb545b17325
+    sha256: bff3b8e73c01eb8227df8e13a6df587d36a0e5867ea87b85dc561d6bdff02159
 
 build:
   number: 0
@@ -53,7 +53,7 @@ tests:
       pip_check: true
       python_version: ${{ python_min }}.*
   - script:
-    - rovr --help
+      - rovr --help
 
 about:
   summary: A post-modern terminal file explorer.
