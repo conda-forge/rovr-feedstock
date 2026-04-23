@@ -1,6 +1,6 @@
 context:
-  version: "0.7.0"
-  python_min: 3.12
+  version: "0.8.0"
+  python_min: 3.13
 
 package:
   name: rovr
@@ -8,7 +8,7 @@ package:
 
 source:
   - url: https://pypi.org/packages/source/r/rovr/rovr-${{ version }}.tar.gz
-    sha256: eba71b6b722a808f6b7d7dbef8e74d07114e4305327d8425c97bacb545b17325
+    sha256: 8e6f5c603816c00e4457edec1cf07049cfecf194b57e8fdd668bec6d9382dc42
 
 build:
   number: 0
@@ -34,7 +34,7 @@ requirements:
     - pillow >=12.0.0
     - platformdirs >=4.5.0
     - psutil >=7.1.0
-    - puremagic ==1.30
+    - puremagic >=2.0.0
     - rarfile >=4.2
     - rich >=14.3.1
     - rich-click >=1.9.3
@@ -53,7 +53,7 @@ tests:
       pip_check: true
       python_version: ${{ python_min }}.*
   - script:
-    - rovr --help
+      - rovr --help
 
 about:
   summary: A post-modern terminal file explorer.
